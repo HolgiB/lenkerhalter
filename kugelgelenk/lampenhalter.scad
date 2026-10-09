@@ -151,7 +151,8 @@ module arm()
 {
     // Arm radial nach oben, geht in den liegenden Zylinder ueber.
     // Nach Holgis Displayhalter: r = 0.5*Schellenbreite, h = Schellenbreite.
-    x  = schellen_breite - 0.3;
+    // Arm exakt so breit wie die Schelle: kein Absatz, buendige Aussenflaechen
+    x  = schellen_breite;
     y0 = arm_y_start;
     hull()
     {

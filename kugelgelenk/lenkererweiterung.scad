@@ -124,7 +124,8 @@ module arm()
 {
     y0 = arm_y_start;
     y1 = arm_y_start * arm_y_ende;
-    x  = schellen_breite - 0.3;
+    // Arm exakt so breit wie die Schelle: kein Absatz, buendige Aussenflaechen
+    x  = schellen_breite;
     hull()
     {
         // massive Bloecke statt duenner Platten: die Huellflaeche waechst tief
