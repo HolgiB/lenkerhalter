@@ -126,6 +126,33 @@ Nachgemessen am gerenderten STL (31,8 mm):
   arm_laenge 85 -> 127,90 mm Bauhoehe, ~73 g
 * Rendert warnungsfrei, kein Minkowski (schnell und robust)
 
+
+## Das Erweiterungsrohr (lenkerrohr.scad)
+
+Das Gegenstueck zur Erweiterung: das Rohr, das in die feste 22-mm-Aufnahme
+gesteckt wird. Liegend konstruiert, mit Abflachung nach unten, damit es ohne
+Stuetzmaterial druckt.
+
+    d_rohr   = 22;    // Aussendurchmesser, passend zur 22-mm-Aufnahme
+    laenge   = 130;   // 120 bis 140 sind praktikabel
+    auflage  = 7;     // Breite der Auflageflaeche (6 bis 8 sind sinnvoll)
+    fase     = 1;     // Fase an beiden Enden
+
+Das Modell ist ein **Vollbauteil**. Bei FDM kommt die Steifigkeit aus
+Perimeterwaenden und geometrischem Infill; eine modellierte Rohrwand waere nur
+Material und Druckzeit. Im Slicer 4 Perimeter und 30 % Cubic oder Gyroid
+einstellen - das ergibt bei 130 mm rund 30 bis 35 g. Wer mehr Steifigkeit in
+der Einspannlaenge braucht, setzt dort einen Modifier-Block mit hoeherem Infill.
+
+Die Auflagebreite ist bewusst als Breite parametrisiert, nicht als Abtrag: ein
+Kreis gibt bei flachem Schnitt viel Breite fuer wenig Tiefe.
+
+    Auflage  6,0 mm -> 0,42 mm Abtrag
+    Auflage  7,0 mm -> 0,57 mm Abtrag
+    Auflage  8,0 mm -> 0,75 mm Abtrag
+
+Fertige STL: 120 / 130 / 160 mm.
+
 ## Lizenz
 
 Bitte beim Hochladen waehlen. Vorschlag: CC BY-NC-SA 4.0 fuer private Nachbauten,
